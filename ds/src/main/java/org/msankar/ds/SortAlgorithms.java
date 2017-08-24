@@ -21,7 +21,7 @@ public class SortAlgorithms {
 		}
 		return inputArray;
 	}
-	
+
 	//O(n^2)
 	public static int[] insertSort(int[] inArray) {
 		for (int i = 1; i < inArray.length; i++) {
@@ -37,13 +37,15 @@ public class SortAlgorithms {
 		}
 		return inArray;
 	}
-	
+
 	//Rearrange in ascending order using the natural order.
+	//O(nlgn)
+	// O(n) auxiliary space.
 	public static int[] mergeSort(int[] a) {
 		mergeSort(a, 0, a.length-1);
 		return a;
 	}
-	
+
 	private static void mergeSort(int[] array, int lo, int hi) {
 		if (lo < hi) {
 			int mid = lo + (hi-lo)/2;
@@ -52,11 +54,11 @@ public class SortAlgorithms {
 			merge(array, lo, mid, hi);
 		}
 	}
-	
+
 	private static void merge(int[] array, int lo, int mid, int hi) {
 		int[] temp = new int[hi-lo+1];
 		int left = lo, right = mid+1, k=0;
-		
+
 		while ( left <= mid && right <= hi){
 			if(array[left] < array[right]) {
 				temp[k++] = array[left++];
@@ -64,7 +66,7 @@ public class SortAlgorithms {
 				temp[k++] = array[right++];
 			}
 		}
-		
+
 		//Supposing left side is bigger than right side copy over remaining elements.
 		if (left <= mid) {
 			while (left <= mid) {
@@ -75,7 +77,7 @@ public class SortAlgorithms {
 				temp[k++] = array[right++];
 			}
 		}
-		
+
 		for (int m = 0; m < temp.length; m++) {
 			array[lo+m] = temp[m];
 		}
@@ -114,15 +116,15 @@ public class SortAlgorithms {
 		}
 		return left;
 	}
-	
+
 	public static void countingSort(int[] inArr) {
-		
+
 		int[] output = new int[inArr.length];
-		
+
 		for ( int i = 0; i < inArr.length; i++) {
 			output[inArr[i]] ++;
 		}
-		
+
 		for (int j = 0; j < output.length; j++) {
 			for (int k=0; k<output[j]; k++) {
 				System.out.print(j + "  ");

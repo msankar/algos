@@ -3,7 +3,7 @@ package org.msankar.ds;
 public class PeakFinder {
 	public static void main(String[] args) {
 		PeakFinder pf = new PeakFinder();
-		int[] arr = new int[] {4,2,1,5,7,9,2};
+		int[] arr = new int[] {4,2,1,5,7,9,2,6,3};
 		System.out.println(pf.findPeak(arr));
 	}
 
@@ -18,6 +18,8 @@ public class PeakFinder {
 		return peakfinder (arr, lo, hi);		
 	}
 
+	// Binary Search O(log n)
+	// Two dimensional O(nlogm)
     public int peakfinder (int[] arr, int lo, int hi) {
     	int mid = lo + ((hi-lo)/2);
     	

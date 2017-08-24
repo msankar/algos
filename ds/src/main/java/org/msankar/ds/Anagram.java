@@ -3,7 +3,14 @@ package org.msankar.ds;
 import java.util.Arrays;
 
 public class Anagram {
-	
+
+	/**
+	 * Returns true if the given Strings are anagrams.
+	 * 
+	 * @param s1
+	 * @param s2
+	 * @return boolean
+	 */
 	public static boolean isAnagram(String s1, String s2) {
 		if (s1 != null && !s1.isEmpty() && s2 != null )
 		s1 = sort(sanitize(s1));

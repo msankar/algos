@@ -1,15 +1,14 @@
 package org.msankar.ds;
 
-
 public class ListNode {
 	private Object data;
 	private ListNode next;
-	
+
 	public ListNode(Object data, ListNode next) {
 		this.data = data;
 		this.next = next;
 	}
-	
+
 	public Object getData() {
 		return data;
 	}
@@ -22,19 +21,19 @@ public class ListNode {
 	public void setNext(ListNode next) {
 		this.next = next;
 	}
-	
+
 	public static ListNode reverse(ListNode current) {
 		if(current == null || current.next == null) {
 			return current;
 		}
-		
+
 		ListNode nextItem = current.next;
 		current.next = null;
 		ListNode reverseRest = reverse(nextItem);
-		nextItem.next = current;		
+		nextItem.next = current;
 		return reverseRest;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -15,11 +15,11 @@ public class Graphs {
 		pq.isEmpty();
 		pq.offer(39);
 		
-		pq.peek();
-		pq.poll();
+		pq.peek(); // Retrieve don't remove. Return NULL if queue is empty
+		pq.poll(); // REtrieve and remove. Return NULL if queue is empty
 		
-		pq.remove();
-		pq.remove(24);	
+		pq.remove(); // Retrieve and remove. Throw an exception if queue is empty
+		pq.remove(24); 
 		
 	}
 }
